@@ -2,8 +2,6 @@ import os
 import importlib
 import asyncio
 from functools import lru_cache
-import logging
-logging.basicConfig(level=logging.DEBUG)
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -26,6 +24,9 @@ import time
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
+
+import logging
+logging.basicConfig(level=logging.DEBUG)
 
 # load .env file
 from dotenv import load_dotenv
